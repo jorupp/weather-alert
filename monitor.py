@@ -16,14 +16,14 @@ ALERT_B = 10  # Temperature threshold B
 ALERT_B_MINUS = ALERT_B - 5  # Temperature threshold B-5
 
 def get_temperature():
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={LOCATION}&appid={API_KEY}&units=metric'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={LOCATION}&appid={API_KEY}&units=imperial'
     response = requests.get(url)
     data = response.json()
     temperature = data['main']['temp']
     return temperature
 
 def get_forecast():
-    url = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units=metric'
+    url = f'http://api.openweathermap.org/data/2.5/forecast?q={LOCATION}&appid={API_KEY}&units=imperial'
     response = requests.get(url)
     data = response.json()
     forecast = data['list'][0]['main']['temp']
