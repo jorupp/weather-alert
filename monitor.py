@@ -1,8 +1,14 @@
 import requests
 import time
 
-API_KEY = 'your_api_key'  # Replace with your OpenWeatherMap API key
-LOCATION = 'your_location'  # Replace with your desired location
+from dotenv import dotenv_values
+
+# Load variables from the .env file
+config = dotenv_values()
+
+# Access individual configuration variables
+api_key = config['API_KEY']
+location = config['LOCATION']
 
 ALERT_A = 25  # Temperature threshold A
 ALERT_A_PLUS = ALERT_A + 5  # Temperature threshold A+5
